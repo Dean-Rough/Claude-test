@@ -9,7 +9,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
-const open = require('open');
 
 // Import routes
 const siteRoutes = require('./routes/sites');
@@ -98,8 +97,12 @@ const server = app.listen(PORT, () => {
     console.log('Press Ctrl+C to stop the server');
     console.log('');
 
-    // Auto-open browser
-    open(url).catch(() => {
+    // Auto-open browser (dynamic import for ES module compatibility)
+    import('open').then(({ default: open }) => {
+        open(url).catch(() => {
+            console.log('Could not auto-open browser. Please navigate to:', url);
+        });
+    }).catch(() => {
         console.log('Could not auto-open browser. Please navigate to:', url);
     });
 });
