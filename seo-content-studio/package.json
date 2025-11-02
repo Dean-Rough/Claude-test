@@ -6,9 +6,18 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report"
   },
-  "keywords": ["seo", "content", "ai", "claude", "desktop"],
+  "keywords": [
+    "seo",
+    "content",
+    "ai",
+    "claude",
+    "desktop"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -20,5 +29,8 @@
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "open": "^10.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
   }
 }
