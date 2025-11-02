@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Content Studio - Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rsg-app">
+        <!-- Header -->
+        <header class="rsg-header">
+            <div class="rsg-header-content">
+                <h1>🎯 SEO Content Studio</h1>
+                <nav>
+                    <a href="/dashboard" class="active">Dashboard</a>
+                    <a href="/settings">Settings</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="rsg-main">
+            <div class="rsg-container">
+                <!-- Welcome Message -->
+                <div class="rsg-welcome">
+                    <h2>Welcome to SEO Content Studio</h2>
+                    <p>Generate SEO-optimized content for local businesses using Claude AI.</p>
+                </div>
+
+                <!-- Action Cards -->
+                <div class="rsg-action-grid">
+                    <a href="/create-site" class="rsg-action-card">
+                        <div class="rsg-action-icon">🏢</div>
+                        <h3>Create New Site</h3>
+                        <p>Start a new project for a local business</p>
+                    </a>
+
+                    <a href="/settings" class="rsg-action-card">
+                        <div class="rsg-action-icon">⚙️</div>
+                        <h3>Configure Settings</h3>
+                        <p>Set up your Claude API key</p>
+                    </a>
+                </div>
+
+                <!-- Sites List -->
+                <div class="rsg-section">
+                    <div class="rsg-section-header">
+                        <h2>Your Sites</h2>
+                        <a href="/create-site" class="button-primary">+ New Site</a>
+                    </div>
+
+                    <div id="sites-list" class="rsg-sites-grid">
+                        <!-- Sites will be loaded here via JavaScript -->
+                        <div class="rsg-empty-state">
+                            <p>No sites yet. Create your first site to get started!</p>
+                            <a href="/create-site" class="button-primary">Create Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="rsg-footer">
+            <p>SEO Content Studio v1.0 - Powered by Claude AI</p>
+        </footer>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
