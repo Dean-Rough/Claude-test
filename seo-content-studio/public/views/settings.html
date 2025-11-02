@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SEO Content Studio</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rsg-app">
+        <!-- Header -->
+        <header class="rsg-header">
+            <div class="rsg-header-content">
+                <h1>🎯 SEO Content Studio</h1>
+                <nav>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/settings" class="active">Settings</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="rsg-main">
+            <div class="rsg-container">
+                <div class="rsg-section">
+                    <div class="rsg-section-header">
+                        <h1>Settings</h1>
+                    </div>
+
+                    <!-- Settings Form -->
+                    <form id="settings-form" class="rsg-form">
+                        <!-- Claude API Key -->
+                        <div class="rsg-form-group">
+                            <label for="claude_api_key" class="rsg-label">
+                                Claude API Key
+                                <span class="required">*</span>
+                            </label>
+                            <input
+                                type="password"
+                                id="claude_api_key"
+                                name="claude_api_key"
+                                class="rsg-input"
+                                placeholder="sk-ant-..."
+                                autocomplete="off"
+                            >
+                            <p class="rsg-help-text">
+                                Get your API key from
+                                <a href="https://console.anthropic.com/" target="_blank" rel="noopener">
+                                    console.anthropic.com
+                                </a>
+                            </p>
+                            <div id="api-key-status" class="rsg-status-message"></div>
+                        </div>
+
+                        <!-- Default Model -->
+                        <div class="rsg-form-group">
+                            <label for="default_model" class="rsg-label">Default Claude Model</label>
+                            <select id="default_model" name="default_model" class="rsg-input">
+                                <option value="claude-sonnet-4-20250514">Claude Sonnet 4 (Recommended)</option>
+                                <option value="claude-3-5-sonnet-20241022">Claude 3.5 Sonnet</option>
+                                <option value="claude-3-opus-20240229">Claude 3 Opus</option>
+                            </select>
+                            <p class="rsg-help-text">
+                                Sonnet 4 offers the best balance of speed, quality, and cost.
+                            </p>
+                        </div>
+
+                        <!-- Test Connection Button -->
+                        <div class="rsg-form-actions">
+                            <button type="button" id="test-api-btn" class="button-secondary">
+                                Test Connection
+                            </button>
+                            <button type="submit" class="button-primary">
+                                Save Settings
+                            </button>
+                        </div>
+
+                        <div id="form-message" class="rsg-message"></div>
+                    </form>
+
+                    <!-- API Status -->
+                    <div class="rsg-info-box" style="margin-top: 2rem;">
+                        <h3>📊 API Status</h3>
+                        <div id="api-status">
+                            <p>Configure your API key above to get started.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="rsg-footer">
+            <p>SEO Content Studio v1.0 - Powered by Claude AI</p>
+        </footer>
+    </div>
+
+    <script src="/js/settings.js"></script>
+</body>
+</html>

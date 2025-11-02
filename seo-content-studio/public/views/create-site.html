@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Site - SEO Content Studio</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rsg-app">
+        <!-- Header -->
+        <header class="rsg-header">
+            <div class="rsg-header-content">
+                <h1>🎯 SEO Content Studio</h1>
+                <nav>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/settings">Settings</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="rsg-main">
+            <div class="rsg-container">
+                <div class="rsg-section">
+                    <div class="rsg-section-header">
+                        <h1>Create New Site</h1>
+                        <a href="/dashboard" class="button-secondary">← Back to Dashboard</a>
+                    </div>
+
+                    <!-- Site Creation Form -->
+                    <form id="create-site-form" class="rsg-form">
+                        <!-- Basic Information -->
+                        <div class="rsg-form-section">
+                            <h2>Basic Information</h2>
+
+                            <div class="rsg-form-group">
+                                <label for="business_name" class="rsg-label">
+                                    Business Name
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="business_name"
+                                    name="business_name"
+                                    class="rsg-input"
+                                    placeholder="e.g., Joe's Pizza"
+                                    required
+                                >
+                            </div>
+
+                            <div class="rsg-form-group">
+                                <label for="industry" class="rsg-label">
+                                    Industry
+                                    <span class="required">*</span>
+                                </label>
+                                <select id="industry" name="industry" class="rsg-input" required>
+                                    <option value="">Select Industry...</option>
+                                    <option value="food_beverage">Food & Beverage</option>
+                                    <option value="home_services">Home Services</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="professional_services">Professional Services</option>
+                                    <option value="beauty_wellness">Beauty & Wellness</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="automotive">Automotive</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="rsg-form-group">
+                                <label for="business_type" class="rsg-label">
+                                    Business Type
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="business_type"
+                                    name="business_type"
+                                    class="rsg-input"
+                                    placeholder="e.g., Restaurant, Plumber, Dentist"
+                                    required
+                                >
+                            </div>
+
+                            <div class="rsg-form-group">
+                                <label for="location" class="rsg-label">
+                                    Location
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="location"
+                                    name="location"
+                                    class="rsg-input"
+                                    placeholder="e.g., San Francisco, CA"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="rsg-form-section">
+                            <h2>Contact Information</h2>
+
+                            <div class="rsg-form-group">
+                                <label for="phone" class="rsg-label">Phone</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="rsg-input"
+                                    placeholder="(555) 123-4567"
+                                >
+                            </div>
+
+                            <div class="rsg-form-group">
+                                <label for="email" class="rsg-label">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="rsg-input"
+                                    placeholder="contact@business.com"
+                                >
+                            </div>
+
+                            <div class="rsg-form-group">
+                                <label for="website" class="rsg-label">Website</label>
+                                <input
+                                    type="url"
+                                    id="website"
+                                    name="website"
+                                    class="rsg-input"
+                                    placeholder="https://www.business.com"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Service Area -->
+                        <div class="rsg-form-section">
+                            <h2>Service Area</h2>
+
+                            <div class="rsg-form-group">
+                                <label for="service_area_type" class="rsg-label">Service Area Type</label>
+                                <select id="service_area_type" name="service_area_type" class="rsg-input">
+                                    <option value="single">Single Location</option>
+                                    <option value="multi">Multiple Locations</option>
+                                    <option value="service">Service Area Business</option>
+                                </select>
+                            </div>
+
+                            <div class="rsg-form-group" id="radius-group" style="display: none;">
+                                <label for="service_radius" class="rsg-label">Service Radius (miles)</label>
+                                <input
+                                    type="number"
+                                    id="service_radius"
+                                    name="service_radius"
+                                    class="rsg-input"
+                                    placeholder="25"
+                                    min="0"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Business Details -->
+                        <div class="rsg-form-section">
+                            <h2>Business Details</h2>
+
+                            <div class="rsg-form-group">
+                                <label for="description" class="rsg-label">Business Description</label>
+                                <textarea
+                                    id="description"
+                                    name="description"
+                                    class="rsg-input"
+                                    rows="4"
+                                    placeholder="Describe your business, services, unique selling points..."
+                                ></textarea>
+                            </div>
+
+                            <div class="rsg-form-group">
+                                <label for="brand_voice" class="rsg-label">Brand Voice</label>
+                                <select id="brand_voice" name="brand_voice" class="rsg-input">
+                                    <option value="professional">Professional</option>
+                                    <option value="friendly">Friendly</option>
+                                    <option value="casual">Casual</option>
+                                    <option value="authoritative">Authoritative</option>
+                                    <option value="playful">Playful</option>
+                                </select>
+                            </div>
+
+                            <div class="rsg-form-group">
+                                <label for="writing_sample" class="rsg-label">Writing Sample (Optional)</label>
+                                <textarea
+                                    id="writing_sample"
+                                    name="writing_sample"
+                                    class="rsg-input"
+                                    rows="4"
+                                    placeholder="Paste existing content from your business to help match your writing style..."
+                                ></textarea>
+                                <p class="rsg-help-text">
+                                    Provide a sample of your existing content to help Claude match your writing style.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="rsg-form-actions">
+                            <a href="/dashboard" class="button-secondary">Cancel</a>
+                            <button type="submit" class="button-primary" id="submit-btn">
+                                Create Site
+                            </button>
+                        </div>
+
+                        <div id="form-message" class="rsg-message"></div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="rsg-footer">
+            <p>SEO Content Studio v1.0 - Powered by Claude AI</p>
+        </footer>
+    </div>
+
+    <script src="/js/create-site.js"></script>
+</body>
+</html>

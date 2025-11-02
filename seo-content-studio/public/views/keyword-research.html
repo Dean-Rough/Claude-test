@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Research - SEO Content Studio</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rsg-app">
+        <!-- Header -->
+        <header class="rsg-header">
+            <div class="rsg-header-content">
+                <h1>🎯 SEO Content Studio</h1>
+                <nav>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/settings">Settings</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="rsg-main">
+            <div class="rsg-container">
+                <!-- Page Header -->
+                <div class="rsg-section-header">
+                    <div>
+                        <h1>Keyword Research</h1>
+                        <p id="site-name" class="rsg-subtitle"></p>
+                    </div>
+                    <div>
+                        <a href="/dashboard" class="button-secondary">← Dashboard</a>
+                        <a href="#" id="continue-btn" class="button-primary" style="display: none;">
+                            Continue to Content →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Keyword Generation Form -->
+                <div class="rsg-section">
+                    <h2>Generate Keywords</h2>
+                    <form id="keyword-form" class="rsg-form">
+                        <div class="rsg-form-group">
+                            <label for="seed_keywords" class="rsg-label">
+                                Seed Keywords
+                                <span class="required">*</span>
+                            </label>
+                            <textarea
+                                id="seed_keywords"
+                                name="seed_keywords"
+                                class="rsg-input"
+                                rows="3"
+                                placeholder="Enter seed keywords, one per line (e.g., 'pizza delivery', 'italian restaurant')"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="rsg-form-group">
+                            <label class="rsg-checkbox">
+                                <input type="checkbox" id="auto_expand" name="auto_expand" checked>
+                                Auto-expand with Google Autocomplete suggestions
+                            </label>
+                        </div>
+
+                        <button type="submit" class="button-primary" id="generate-btn">
+                            Generate Keywords
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Competitor Analysis (Optional) -->
+                <div class="rsg-section">
+                    <h2>Competitor Analysis (Optional)</h2>
+                    <form id="competitor-form" class="rsg-form">
+                        <div class="rsg-form-group">
+                            <label for="competitor_url" class="rsg-label">Competitor URL</label>
+                            <input
+                                type="url"
+                                id="competitor_url"
+                                name="competitor_url"
+                                class="rsg-input"
+                                placeholder="https://competitor-website.com"
+                            >
+                        </div>
+
+                        <button type="submit" class="button-secondary" id="analyze-btn">
+                            Analyze Competitor
+                        </button>
+                    </form>
+
+                    <div id="competitor-results" style="display: none; margin-top: 1rem;">
+                        <!-- Competitor analysis results will appear here -->
+                    </div>
+                </div>
+
+                <!-- Keywords Results -->
+                <div id="keywords-section" class="rsg-section" style="display: none;">
+                    <div class="rsg-section-header">
+                        <h2>Generated Keywords</h2>
+                        <button id="save-keywords-btn" class="button-primary">
+                            Save Keywords
+                        </button>
+                    </div>
+
+                    <div id="keywords-list" class="rsg-table-container">
+                        <!-- Keywords will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Saved Keywords -->
+                <div id="saved-keywords-section" class="rsg-section" style="display: none;">
+                    <h2>Saved Keywords</h2>
+                    <div id="saved-keywords-list" class="rsg-table-container">
+                        <!-- Saved keywords will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="rsg-footer">
+            <p>SEO Content Studio v1.0 - Powered by Claude AI</p>
+        </footer>
+    </div>
+
+    <script>
+        // Pass site ID from server to JavaScript
+        const SITE_ID = '<%= siteId %>';
+    </script>
+    <script src="/js/keyword-research.js"></script>
+</body>
+</html>

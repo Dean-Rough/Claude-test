@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Library - SEO Content Studio</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rsg-app">
+        <!-- Header -->
+        <header class="rsg-header">
+            <div class="rsg-header-content">
+                <h1>🎯 SEO Content Studio</h1>
+                <nav>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/settings">Settings</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="rsg-main">
+            <div class="rsg-container">
+                <!-- Page Header -->
+                <div class="rsg-section-header">
+                    <div>
+                        <h1>Content Library</h1>
+                        <p id="site-name" class="rsg-subtitle"></p>
+                    </div>
+                    <div>
+                        <a href="/keyword-research/<%= siteId %>" class="button-secondary">← Keywords</a>
+                        <button id="generate-architecture-btn" class="button-primary">
+                            Generate Site Architecture
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Site Architecture -->
+                <div id="architecture-section" class="rsg-section" style="display: none;">
+                    <div class="rsg-section-header">
+                        <h2>Proposed Site Architecture</h2>
+                        <button id="generate-all-btn" class="button-primary">
+                            Generate All Pages
+                        </button>
+                    </div>
+
+                    <div id="architecture-list">
+                        <!-- Architecture will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Generated Pages -->
+                <div id="pages-section" class="rsg-section">
+                    <div class="rsg-section-header">
+                        <h2>Generated Pages</h2>
+                        <div id="generation-progress" style="display: none;">
+                            <span class="rsg-badge rsg-badge-info">Generating...</span>
+                        </div>
+                    </div>
+
+                    <div id="pages-list">
+                        <!-- Pages will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="rsg-footer">
+            <p>SEO Content Studio v1.0 - Powered by Claude AI</p>
+        </footer>
+    </div>
+
+    <!-- Page Preview Modal -->
+    <div id="preview-modal" class="rsg-modal" style="display: none;">
+        <div class="rsg-modal-content">
+            <div class="rsg-modal-header">
+                <h2 id="modal-title">Page Preview</h2>
+                <button class="rsg-modal-close" onclick="closePreview()">&times;</button>
+            </div>
+            <div class="rsg-modal-body" id="modal-body">
+                <!-- Preview content will be loaded here -->
+            </div>
+            <div class="rsg-modal-footer">
+                <button class="button-secondary" onclick="closePreview()">Close</button>
+                <button class="button-primary" id="export-btn">Export HTML</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Pass site ID from server to JavaScript
+        const SITE_ID = '<%= siteId %>';
+    </script>
+    <script src="/js/content-library.js"></script>
+</body>
+</html>
